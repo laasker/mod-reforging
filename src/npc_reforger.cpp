@@ -42,6 +42,9 @@ private:
 
         for (uint8 slot = EQUIPMENT_SLOT_START; slot < EQUIPMENT_SLOT_END; slot++)
         {
+            if (slot == EQUIPMENT_SLOT_BODY || slot == EQUIPMENT_SLOT_TABARD)
+                continue;
+
             Item* item = sItemReforge->GetItemInSlot(player, slot);
             std::ostringstream oss;
             oss << sItemReforge->GetSlotIcon(slot);
@@ -158,6 +161,9 @@ private:
 
         for (uint8 slot = EQUIPMENT_SLOT_START; slot < EQUIPMENT_SLOT_END; slot++)
         {
+            if (slot == EQUIPMENT_SLOT_BODY || slot == EQUIPMENT_SLOT_TABARD)
+                continue;
+
             Item* item = sItemReforge->GetItemInSlot(player, slot);
             std::ostringstream oss;
             oss << sItemReforge->GetSlotIcon(slot);
